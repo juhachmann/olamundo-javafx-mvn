@@ -94,12 +94,8 @@ public class FXMLAnchorPaneRelatorioQuantidadeProdutosController implements Init
     //@FXML
     public void handleImprimir() throws JRException {
 
-        var stream = getClass().getResource("/report/PrjSistemaVendasRelEstoque.jasper");
-        System.out.println(stream.getPath());
-
-        System.out.println("Chegou aqui 99");
-        JasperReport jasperReport = (JasperReport)JRLoader.loadObject(stream);
-        System.out.println("Chegou aqui? 101");
+        URL url = getClass().getResource("/report/PrjSistemaVendasRelEstoque.jasper");
+        JasperReport jasperReport = (JasperReport)JRLoader.loadObject(url);
 
         //null: caso não existam filtros
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, connection);
