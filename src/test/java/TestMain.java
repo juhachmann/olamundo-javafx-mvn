@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-import br.edu.ifsc.fln.model.domain.Fornecedor;
+import br.edu.ifsc.model.domain.Fornecedor;
 
 /**
  *

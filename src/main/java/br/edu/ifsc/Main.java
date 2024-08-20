@@ -2,16 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
  */
-package br.edu.ifsc.fln;
+package br.edu.ifsc;
 
+import atlantafx.base.theme.NordDark;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
-import atlantafx.base.theme.*;
 
 import java.io.IOException;
 
@@ -19,28 +17,26 @@ import java.io.IOException;
  *
  * @author mpisc
  */
-public class MainApp extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
 
-        // Temas: https://mkpaz.github.io/atlantafx/#themes 
-        // Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
-        
-        
+        // Uso de temas CSS
+        Application.setUserAgentStylesheet(new NordDark().getUserAgentStylesheet());
+
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/view/FXMLVBoxMainApp.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/view/FXMLLabelMensagem.fxml"));
         } catch (IOException ex) {
-            System.out.println("Não foi possível carregar o formulário");
+            System.out.println("Não foi possível carregar a tela");
         }
         
         Scene scene = new Scene(root, 600, 400);
         
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/icon/IFSC_logo_vertical.png")));
-        primaryStage.setTitle("Sistema de Vendas do IFSC Florianópolis");
+        primaryStage.setTitle("Meu Primeiro JavaFX");
         primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
         primaryStage.show();
     }
 
