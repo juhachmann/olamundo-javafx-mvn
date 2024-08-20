@@ -11,6 +11,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import atlantafx.base.theme.*;
+
 import java.io.IOException;
 
 /**
@@ -22,6 +24,10 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+        // Temas: https://mkpaz.github.io/atlantafx/#themes 
+        // Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
+        
+        
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/view/FXMLVBoxMainApp.fxml"));
